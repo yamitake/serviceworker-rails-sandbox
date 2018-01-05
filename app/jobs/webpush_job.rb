@@ -4,9 +4,11 @@ class WebpushJob < ActiveJob::Base
   def perform(message, params)
     client = WebpushClient.new
 
+    log('---------------------------------------------------------------------------------')
     log("sending #{message} to #{params[:endpoint]}")
     response = client.send_notification(message, params)
     log(response ? "success" : "failed")
+    log('---------------------------------------------------------------------------------')
     log(response.body.inspect)
   end
 

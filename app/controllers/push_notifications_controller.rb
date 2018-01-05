@@ -18,7 +18,7 @@ class PushNotificationsController < ApplicationController
   end
 
   def fetch_message
-    push_params.fetch(:message, "Yay, you sent a push notification!")
+    push_params.fetch(:message, "aabbcc Yay, you sent a push notification!")
   end
 
   def fetch_subscription_params
